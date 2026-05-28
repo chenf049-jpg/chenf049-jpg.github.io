@@ -11,27 +11,27 @@
 
 @charset "utf-8";
 
-/* a标签样式 - 学术风格调整 */
+/* a标签样式 */
 a {
   text-decoration: none;
 }
 
 a:link {
-  color: #2563EB;
+  color: #1077BC;
 }
 
 a:hover {
-  color: #1D4ED8;
-  text-decoration: underline;
+  color: #FF9900;
+  text-decoration: none;
 }
 
 a:active {
-  color: #1E40AF;
+  color: #FF6699;
   text-decoration: none;
 }
 
 a:visited {
-  color: #6B21A8;
+  color: #FF6699;
 }
 
 /* 主页中央区域 */
@@ -92,7 +92,7 @@ a.brand {
 }
 
 .navbar .nav>li.active>a {
-  color:#2563EB;
+  color:#EC6197;
 }
 
 /* 覆盖typo.css中ul默认的margin-left属性 */
@@ -107,12 +107,12 @@ ul.tag_box > li:first-child {
 /* 标题栏文字样式 */
 .site-title {
   font-size: 14px;
-  color: #4A4A6A;
+  color: #1B813F;
 }
 
 .site-author {
-  font-size: 26px;
-  color: #1A1A2E;
+  font-size: 28px;
+  color: #169FDE;
 }
 
 /* 底部div定位 */
