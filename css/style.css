@@ -1,0 +1,148 @@
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px; }
+
+.container-narrow > hr {
+  margin: 30px 0; }
+
+.navbar .nav {
+  float: right; }
+
+/* posts index */
+.post > h3.title {
+  position: relative;
+  padding-top: 10px; }
+
+.post > h3.title span.date {
+  position: absolute;
+  right: 0;
+  font-size: 0.9em; }
+
+.post > .more {
+  margin: 10px 0;
+  text-align: left; }
+
+/* post-full*/
+.post-full .date {
+  margin-bottom: 20px;
+  font-weight: bold; }
+
+/* tag_box */
+.tag_box {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; }
+
+.tag_box li {
+  line-height: 28px; }
+
+.tag_box li i {
+  opacity: 0.9; }
+
+.tag_box.inline li {
+  float: left; }
+
+.tag_box a {
+  text-decoration: none;}
+
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+/* ========== Academic Styles ========== */
+
+/* Research tags on homepage */
+.research-tags {
+  margin: 15px 0 25px;
+}
+.research-tags .tag {
+  display: inline-block;
+  padding: 4px 14px;
+  margin: 0 6px 10px 0;
+  background: #E8F0FE;
+  color: #2563EB;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid #D0E0FF;
+}
+.research-tags .tag:hover {
+  background: #2563EB;
+  color: #fff;
+  cursor: default;
+}
+
+/* Timeline-like lists */
+ul.academic-list {
+  list-style: none;
+  margin-left: 0;
+}
+ul.academic-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Tables in academic pages */
+.page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+.page table th,
+.page table td {
+  padding: 10px 12px;
+  border: 1px solid #E0E0E0;
+  vertical-align: top;
+}
+.page table th {
+  background: #F5F7FA;
+  font-weight: 600;
+  color: #333;
+}
+.page table tr:hover {
+  background: #FAFBFC;
+}
+
+/* Better headings for academic content */
+.page h2 {
+  margin-top: 35px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E8E8EE;
+  color: #1A1A2E;
+}
+.page h3 {
+  margin-top: 25px;
+  color: #2C3E50;
+}
+
+/* Hero section (homepage) */
+.hero-unit h1 {
+  font-size: 36px;
+  color: #1A1A2E;
+}
+
+/* Code blocks in academic context */
+.page pre {
+  background: #F5F7FA;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 13px;
+}
+
+/* Responsive fixes */
+@media (max-width: 767px) {
+  .navbar .nav {
+    float: none;
+    text-align: center;
+  }
+  .navbar .nav > li {
+    display: inline-block;
+    float: none;
+  }
+  .research-tags .tag {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+}
+

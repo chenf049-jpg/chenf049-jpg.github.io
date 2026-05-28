@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "JEKYLL_ENV": "production"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}
