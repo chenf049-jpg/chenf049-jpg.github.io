@@ -1,50 +1,48 @@
-<div class="row-fluid post-full typo">
-  <div class="span2"></div>
-  <div class="span8 typo">
-    <h2>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h2>
-    <div class="post_info">
+<article class="post-full">
+  <header class="post-header">
+    <h2>{{ page.title }}</h2>
+    <div class="post-meta">
+      <span><i class="icon-calendar"></i> {{ page.date | date: "%Y 年 %m 月 %d 日" }}</span>
       {% unless page.categories == empty %}
-      <ul class="tag_box inline">
-        <li><i class="icon-calendar"></i></li>
-        <li>{{ page.date | date: " %Y 年 %m 月 %d 日" }}</li>
-        <li><i class="icon-folder-open"></i></li>
-        {% assign post_categories = page.categories %}
-        {% include codepiano/post_categories_info %}
-      </ul>
-      {% endunless %}  
+      <span><i class="icon-folder-open"></i>
+        {% for category in page.categories %}
+          <a href="/categories.html#{{ category }}-ref">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      {% endunless %}
     </div>
-    <div class="content">
-      {{ content }}
-    </div>
+  </header>
 
-    {% unless page.tags == empty %}
+  <div class="post-content typo">
+    {{ content }}
+  </div>
+
+  {% unless page.tags == empty %}
+  <div style="margin-top: 2rem;">
     <ul class="tag_box inline">
-      <li><i class="icon-tags"></i></li>
+      <li><i class="icon-tags" style="color: var(--text-tertiary); margin-right: 6px;"></i></li>
       {% assign tags_list = page.tags %}
       {% include codepiano/tags_list %}
     </ul>
-    {% endunless %}  
+  </div>
+  {% endunless %}
 
-    <hr>
-    <div class="pagination pull-right">
-      <ul>
-        {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-        {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
-        {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.codepiano.archive_path }}">Archive</a></li>
-        {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-        {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
-        {% endif %}
-      </ul>
+  <nav class="post-nav">
+    <div>
+      {% if page.previous %}
+      <a href="{{ BASE_PATH }}{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+      {% else %}
+      <span style="color: var(--text-tertiary);">&larr; 上一篇</span>
+      {% endif %}
     </div>
+    <div>
+      {% if page.next %}
+      <a href="{{ BASE_PATH }}{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+      {% else %}
+      <span style="color: var(--text-tertiary);">下一篇 &rarr;</span>
+      {% endif %}
+    </div>
+  </nav>
 
-  <br />
-    <div id="comment-hook">
-    {% include custom/duoshuo.html %}
-    </div>
-  <div class="span2"></div>
-</div>
+  {% include custom/duoshuo.html %}
+</article>

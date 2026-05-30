@@ -5,83 +5,112 @@ header: about me
 group: navigation
 index: 4
 ---
-{% include codepiano/setup %}
 
-<h2 id="">关于我</h2>
+<div class="about-page">
+  <div class="about-header">
+    <h2>关于我</h2>
+    <p class="about-subtitle">通信工程硕士 · PTN/SPN 光网络 · AI+医疗交叉研究</p>
+  </div>
 
-<ul>
-<li>大众版</li>
-</ul>
+  <section class="about-section">
+    <h3>个人简介</h3>
+    <p>
+      通信工程硕士毕业，现从事 PTN/SPN 光网络维护工作，具备现网运维实战经验。
+      关注 Physical AI 与通信基础设施的交叉领域，探索将 AI 能力注入通信网络，
+      同时用通信思维理解 AI 系统。
+    </p>
+    <p>
+      目标在 2027 年申请博士，研究方向为通信工程 / 计算机方向，将现网经验与 AI 研究结合，
+      探索下一代智能通信系统。
+    </p>
+  </section>
 
-<p>Android开发者 + Ruby语言爱好者 + Google脑残粉，爱技术，爱尝鲜，爱开源，爱设计，也爱赚钱！ 热爱并沉溺于移动互联网，Want to make a good app!</p>
+  <section class="about-section">
+    <h3>研究方向</h3>
+    <ul class="about-tags">
+      <li>PTN/SPN 光网络</li>
+      <li>5G/6G 通信</li>
+      <li>Physical AI</li>
+      <li>AI+医疗决策</li>
+      <li>网络智能化</li>
+      <li>边缘计算</li>
+    </ul>
+  </section>
 
-<p>如果想更多的了解我，看这里<a href="http://stormzhang.com/my-progress">我的大事记</a></p>
-
-<ul>
-<li>Ruby版</li>
-</ul>
-
-{% highlight ruby %}
-name = 'Storm'
-real_name = '张奇'
-description = 'Android Developer, Google Fans, Love Open Source'
-company = '薄荷科技'
-
-sina_weibo = 'googdev'
-email = 'stormzhang.dev$#mail.com'.gsub('$#', '@')
-blog = 'http://stormzhang.com'
-github = 'https://github.com/stormzhang'
-
-while true
-  programing
-  reading
-  enjoying
-end
-{% endhighlight %}
-
-<h2 id="_2">联系我</h2>
-
-<ul>
-<li>
-<p>GitHub: <a href="https://github.com/stormzhang">stormzhang</a></p>
-</li>
-
-<li>
-<p>微博: <a href="http://weibo.com/zhangqi8">googdev</a></p>
-</li>
-
-<li>
-<p>知乎: <a href="http://www.zhihu.com/people/stormzhang">stormzhang</a></p>
-</li>
-
-<li>
-<p>微信公众号: AndroidDeveloper (专注Android干货分享)，本博客没有rss订阅，建议关注微信公众号，博客更新或干货分享第一时间推送</p>
-<img src="/image/weixinpublic.jpg" />
-</li>
-<br />
-
-<li>
-<p>打赏我：如果觉得我的博客，或者我的各种分享对您有帮助，不妨支付宝扫描打赏我杯咖啡吧，我将更有动力。</p>
-<img src="/image/zhifubao.jpg" />
-</li>
-
-<br />
-
-<div id="comment-hook">
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="about.html" data-title="{{ page.title }}" data-url="http://stormzhang.com{{ page.url }}"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"stormzhang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
+  <section class="about-section">
+    <h3>联系我</h3>
+    <ul class="about-links">
+      <li><i class="icon-envelope"></i> daxiabar@email.com</li>
+      <li><i class="icon-github-sign"></i> <a href="https://github.com/chenf049-jpg" target="_blank">chenf049-jpg</a></li>
+    </ul>
+  </section>
 </div>
+
+<style>
+.about-page {
+  max-width: 680px;
+}
+.about-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-l1);
+}
+.about-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.about-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.about-section {
+  margin-bottom: 2rem;
+}
+.about-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--brand);
+}
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+.about-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.about-tags li {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--brand-soft);
+  border: 1px solid var(--border-l1);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  color: var(--brand);
+}
+.about-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.about-links li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.about-links i {
+  width: 1.25rem;
+  color: var(--brand);
+  margin-right: 0.5rem;
+}
+.about-links a {
+  color: var(--brand);
+}
+</style>
