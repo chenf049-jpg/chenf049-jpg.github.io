@@ -1,76 +1,72 @@
 ---
-layout: page
-title: stormzhang博客精华
-keywords: stormzhang, storm, android, java, android developer, android开发, android技术分享, performance
-description: Focus Android, Love Open Source, Performance Optimization, Coding now
-categories: [Android]
+layout: impress
+title: 大虾条 · 学术主页
 ---
-{% include codepiano/setup %}
 
-## 每周推荐
+<div id="title" class="step" data-x="0" data-y="0" data-z="0" data-scale="3">
+    <span class="name">大虾条</span>
+    <span class="subtitle">通信工程硕士</span>
+    <span class="tagline">PTN/SPN 光网络 · AI+医疗交叉 · 2027 PhD</span>
+</div>
 
-[AndroidDeveloper Weekly No.4](http://stormzhang.com/weekly/2016/08/08/android-developer-weekly-no-4/)
+<div id="about" class="step slide" data-x="1500" data-y="0" data-z="0" data-rotate-y="90" data-scale="1">
+    <h2>关于我</h2>
+    <p>某科技公司 PTN/SPN 光网络维护</p>
+    <p class="detail">24年通信工程硕士毕业 · 现网运维实战经验</p>
+    <p class="detail">关注 Physical AI 与通信基础设施的交叉领域</p>
+    <p class="detail" style="margin-top:20px; opacity:0.5;">从通信人到AI探索者</p>
+</div>
 
-[Android开源项目推荐之「网络请求哪家强」](http://stormzhang.com/opensource/2016/08/05/android-open-source-project-recommend2/)
+<div id="research" class="step slide" data-x="1500" data-y="1000" data-z="0" data-rotate-x="90" data-scale="1">
+    <h2>研究兴趣</h2>
+    <div class="research-tags-3d">
+        <span class="tag">PTN/SPN</span>
+        <span class="tag">5G/6G 通信</span>
+        <span class="tag">Physical AI</span>
+        <span class="tag">AI+医疗决策</span>
+        <span class="tag">网络智能化</span>
+        <span class="tag">边缘计算</span>
+    </div>
+    <p style="margin-top:30px;">将AI能力注入通信网络，<br>用通信思维理解AI系统</p>
+</div>
 
-[如何发现优秀的开源项目？](http://stormzhang.com/github/2016/07/28/learn-github-from-zero7/)
+<div id="project" class="step slide" data-x="0" data-y="1000" data-z="0" data-rotate-y="-90" data-scale="1">
+    <h2>硕士项目：<span class="highlight">AI药物推荐系统</span></h2>
+    <p>基于深度学习的高血压糖尿病药物推荐系统</p>
+    <p class="detail">将机器学习应用于个性化用药方案</p>
+    <p class="detail" style="margin-top:20px;">🏥 数据驱动 · 临床辅助决策</p>
+</div>
 
-[给 Android 初学者的 Gradle 知识普及](http://stormzhang.com/android/2016/07/02/gradle-for-android-beginners/)
+<div id="goal" class="step slide" data-x="0" data-y="0" data-z="-1500" data-rotate-y="180" data-scale="1">
+    <h2>目标</h2>
+    <p style="font-size:32px; font-weight:700; margin:30px 0;">2027 · 申博</p>
+    <p>通信工程 / 计算机方向</p>
+    <p class="detail">将现网经验与AI研究结合，<br>探索下一代智能通信系统</p>
+</div>
 
+<div id="explore" class="step slide" data-x="0" data-y="-1000" data-z="0" data-rotate-x="-90" data-scale="1">
+    <h2>探索更多</h2>
+    <p style="margin-bottom:25px;">查看我的博客文章与技术分享</p>
+    <a href="/posts" class="blog-card">
+        <span class="icon">📝</span>
+        博客文章
+    </a>
+    <a href="https://github.com/chenf049-jpg" class="blog-card" target="_blank">
+        <span class="icon">💻</span>
+        GitHub
+    </a>
+    <a href="/about" class="blog-card">
+        <span class="icon">👤</span>
+        个人简介
+    </a>
+    <p class="detail" style="margin-top:30px;">按 ↓ 键或点击卡片继续</p>
+</div>
 
-* 我的微信公众号: AndroidDeveloper「googdev」 (专注Android的原创分享，关注并回复googdev自学Android资料免费获取)
+<div id="quote" class="step" data-x="0" data-y="0" data-z="1500" data-scale="0.5" data-rotate-z="180">
+    <q>Physical AI 的尽头，<br>就是通信人的战场。</q>
+    <span class="author">— 大虾条</span>
+</div>
 
-<img src="/image/weixinpublic.jpg" />
-
-## 精品文章系列
-
-[AndroidDeveloper Weekly 系列](http://stormzhang.com/weekly/2016/07/26/android-developer-weekly/)
-
-[从0开始学习 GitHub 系列汇总](http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/)
-
-[自学 Android 编程系列](http://stormzhang.com/android/2016/06/10/learn-android-byself/)
-
-[Android Studio 详细教程汇总](http://stormzhang.com/devtools/2015/06/17/android-studio-all)
-
-[靠谱VPN推荐--云梯VPN](http://refyt.com/?r=a9b90a505050781a)
-
-## 微信公众号近期文章
-
-[少年，别再收藏文章了！](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661932&idx=1&sn=8325f8bd782a376434a5bf69e4f38dee#rd)
-
-[我面试到底问什么？](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661871&idx=1&sn=158c380826bb9138fdb2976152dc279b#rd)
-
-[自学编程这几点非常重要](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661865&idx=1&sn=085e2be66714763b5550c54e9253883a#rd)
-
-[公众号历史精品文章汇总](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=503177922&idx=1&sn=6ef35c039a6564b1cec6343754a6c004&scene=23&srcid=0527Py9mKBRTPAWeo7GkikDO#rd)
-
-<!-- <a href="http://m.jianxun.io/event/2?from=stormzhang"><img src="http://www.jianxun.io/ad/20151101/eventno2-stormzhang-banner.png" /></a> -->
-
-## 我的GitHub开源项目
-
-[9GAG](https://github.com/stormzhang/9GAG)
-
-[CustomLoading](https://github.com/stormzhang/CustomLoading)
-
-[SwipeRefreshLayoutDemo](https://github.com/stormzhang/SwipeRefreshLayoutDemo)
-
-<br />
-
-<div id="comment-hook">
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="88888" data-title="{{ page.title }}" data-url="http://stormzhang.com{{ page.url }}"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"stormzhang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
+<div class="hint">
+    <p>按方向键 / 空格浏览 · ESC 查看全景</p>
 </div>
