@@ -1,13 +1,10 @@
-{% comment %} 学术主页导航 {% endcomment %}
-{% assign nav_items = 'research|publications|projects|about|posts' %}
+{% comment %} index.html页面中的导航 {% endcomment %}
+{% assign color_hack = 'posts timeline categories about' %}
 {% assign current_nav = page.url | remove:'/' | remove:'.html' %}
-{% if current_nav == '' or current_nav == 'index' %}
-  {% assign current_nav = 'research' %}
-{% endif %}
-{% assign nav_classes = nav_items | replace:current_nav,'active' | split:'|' %}
+{% assign color_hack = color_hack | replace:{{current_nav}},'active' %}
+{% assign color_hack = color_hack | split:' ' %}
 
-<li class="{{nav_classes[0]}}"><a href="/">研究概览</a></li>
-<li class="{{nav_classes[1]}}"><a href="/publications">论文成果</a></li>
-<li class="{{nav_classes[2]}}"><a href="/projects">项目经历</a></li>
-<li class="{{nav_classes[3]}}"><a href="/about">个人简介</a></li>
-<li class="{{nav_classes[4]}}"><a href="/posts">博客</a></li>
+<li class="{{color_hack[0]}}"><a href="/posts">目录</a></li>
+<li class="{{color_hack[1]}}"><a href="/timeline">时间线</a></li>
+<li class="{{color_hack[3]}}"><a href="/about">关于</a></li>
+<li class="{{color_hack[4]}}"><a href="/link">好基友</a></li>

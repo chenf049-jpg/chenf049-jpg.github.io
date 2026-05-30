@@ -1,33 +1,15 @@
-## 大虾条 · 学术主页
+## stormzhang的个人博客
 
-基于Jekyll的个人学术主页，用于博士申请及工作展示。
+基于jekyll的个人博客站点[http://stormzhang.com](http://stormzhang.com)，主题风格本着"simple is beautiful"的原则。
 
-设计风格基于 stormzhang 原博客主题，秉承"simple is beautiful"原则。
+## 关于我
 
-## 本地运行
+Android开发者 + Ruby语言爱好者 + Google脑残粉，爱技术， 爱开源， 爱设计， 爱赚钱。互联网中毒症患者，Want to make a good app!
 
-```bash
-# 安装依赖
-gem install jekyll bundler
-bundle install
+## 联系我
 
-# 启动本地服务
-jekyll serve
+* Github: [stormzhang](https://github.com/stormzhang)
 
-# 访问 http://localhost:4000
-```
+* Weibo: [googdev](http://weibo.com/zhangqi8)
 
-## 部署
-
-- **GitHub Pages**: 推送到 `yourusername.github.io` 仓库即可
-- **Vercel**: 连接GitHub仓库，自动部署（已配置 vercel.json）
-
-## 项目结构
-
-- `index.md` — 首页（研究概览）
-- `research.md` — 研究方向
-- `publications.md` — 论文成果
-- `projects.md` — 项目经历
-- `about.html` — 个人简介
-- `_posts/` — 博客文章（Markdown）
-- `_config.yml` — 站点配置
+* 知乎: [stormzhang](http://www.zhihu.com/people/stormzhang)

@@ -1,57 +1,76 @@
 ---
 layout: page
-title: 研究概览 | 大虾条
-keywords: 通信工程, PTN, SPN, 光网络, 物理AI, 药物推荐系统
-description: 通信工程硕士，研究方向涉及PTN/SPN光网络、AI+医疗交叉、Physical AI通信基座
+title: stormzhang博客精华
+keywords: stormzhang, storm, android, java, android developer, android开发, android技术分享, performance
+description: Focus Android, Love Open Source, Performance Optimization, Coding now
+categories: [Android]
 ---
+{% include codepiano/setup %}
 
-<div class="hero-unit" style="padding: 40px 0; background: none; text-align: center;">
-  <h1>大虾条</h1>
-  <p class="lead" style="color: #4A4A6A; margin-top: 10px;">
-    通信工程硕士 · PTN/SPN光网络维护 · AI+医疗交叉研究
-  </p>
-  <p style="color: #888; font-size: 15px;">
-    2027年博士申请 | 通信工程 / 计算机方向
-  </p>
-  <p style="margin-top: 15px;">
-    <a href="mailto:daxiabar@email.com" class="btn" style="margin-right: 8px;"><i class="icon-envelope"></i> Email</a>
-    <a href="https://github.com/yourusername" class="btn" style="margin-right: 8px;"><i class="icon-github"></i> GitHub</a>
-    <a href="https://linkedin.com/in/yourprofile" class="btn"><i class="icon-linkedin"></i> LinkedIn</a>
-  </p>
-</div>
+## 每周推荐
 
-<hr />
+[AndroidDeveloper Weekly No.4](http://stormzhang.com/weekly/2016/08/08/android-developer-weekly-no-4/)
 
-## 研究兴趣
+[Android开源项目推荐之「网络请求哪家强」](http://stormzhang.com/opensource/2016/08/05/android-open-source-project-recommend2/)
 
-<div class="research-tags">
-  <span class="tag">PTN/SPN光网络</span>
-  <span class="tag">5G/6G通信</span>
-  <span class="tag">Physical AI</span>
-  <span class="tag">AI+医疗决策</span>
-  <span class="tag">网络智能化</span>
-  <span class="tag">边缘计算</span>
-</div>
+[如何发现优秀的开源项目？](http://stormzhang.com/github/2016/07/28/learn-github-from-zero7/)
 
-## 研究概述
+[给 Android 初学者的 Gradle 知识普及](http://stormzhang.com/android/2016/07/02/gradle-for-android-beginners/)
 
-我致力于**通信网络与人工智能的交叉研究**，目前聚焦于三个方向：
 
-1. **光网络智能化运维** — 基于某科技公司PTN/SPN现网实践，探索AI驱动的故障预测与自动排障
-2. **AI+医疗决策系统** — 硕士期间开发了"基于人工智能的高血压糖尿病药物推荐系统"，将机器学习应用于个性化用药方案
-3. **Physical AI的通信基座** — 关注人形机器人/具身智能对5G/6G网络的需求，思考通信基础设施如何支撑下一代AI终端
+* 我的微信公众号: AndroidDeveloper「googdev」 (专注Android的原创分享，关注并回复googdev自学Android资料免费获取)
 
-## 最新动态
+<img src="/image/weixinpublic.jpg" />
 
-- **2026.05** 发布"机器人战国争霸"系列行业观察文章
-- **2026.04** 完成具身智能商用合规分析报告
-- **2025** 在某科技公司网络部从事PTN/SPN光网络维护工作
-- **2024** 通信工程硕士毕业（085402），毕业论文：基于深度学习的慢性病药物推荐系统
+## 精品文章系列
 
-<hr style="margin-top: 30px;" />
+[AndroidDeveloper Weekly 系列](http://stormzhang.com/weekly/2016/07/26/android-developer-weekly/)
 
-<div style="text-align: center; color: #888; font-size: 13px;">
-  <i class="icon-quote-left"></i>
-  Physical AI的尽头，就是通信人的战场。
-  <i class="icon-quote-right"></i>
+[从0开始学习 GitHub 系列汇总](http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/)
+
+[自学 Android 编程系列](http://stormzhang.com/android/2016/06/10/learn-android-byself/)
+
+[Android Studio 详细教程汇总](http://stormzhang.com/devtools/2015/06/17/android-studio-all)
+
+[靠谱VPN推荐--云梯VPN](http://refyt.com/?r=a9b90a505050781a)
+
+## 微信公众号近期文章
+
+[少年，别再收藏文章了！](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661932&idx=1&sn=8325f8bd782a376434a5bf69e4f38dee#rd)
+
+[我面试到底问什么？](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661871&idx=1&sn=158c380826bb9138fdb2976152dc279b#rd)
+
+[自学编程这几点非常重要](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661865&idx=1&sn=085e2be66714763b5550c54e9253883a#rd)
+
+[公众号历史精品文章汇总](http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=503177922&idx=1&sn=6ef35c039a6564b1cec6343754a6c004&scene=23&srcid=0527Py9mKBRTPAWeo7GkikDO#rd)
+
+<!-- <a href="http://m.jianxun.io/event/2?from=stormzhang"><img src="http://www.jianxun.io/ad/20151101/eventno2-stormzhang-banner.png" /></a> -->
+
+## 我的GitHub开源项目
+
+[9GAG](https://github.com/stormzhang/9GAG)
+
+[CustomLoading](https://github.com/stormzhang/CustomLoading)
+
+[SwipeRefreshLayoutDemo](https://github.com/stormzhang/SwipeRefreshLayoutDemo)
+
+<br />
+
+<div id="comment-hook">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="88888" data-title="{{ page.title }}" data-url="http://stormzhang.com{{ page.url }}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"stormzhang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
 </div>
