@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daxiatiao · 通信工程师 & AI 探索者</title>
+<meta name="description" content="Daxiatiao 的个人博客 - 通信工程硕士，专注于光网络运维、AI数智员工开发与公考备考分享。">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #040805;
+  color: #c8cecb;
+  font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ===== 全局网格背景 ===== */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* ===== Hero 聚光灯遮罩 ===== */
+.hero-spotlight {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+  background:
+    radial-gradient(ellipse 50% 50% at 30% 25%, rgba(12,60,35,0.85) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 65% 28%, rgba(12,60,35,0.7) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 45%, rgba(4,8,5,0.4) 35%, rgba(2,5,3,0.95) 100%);
+  pointer-events: none;
+}
+
+/* ===== 导航栏 ===== */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 52px;
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+nav.scrolled {
+  background: rgba(8,14,11,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,255,136,0.08);
+}
+.logo {
+  font-size: 22px; font-weight: 700; color: #00ff88;
+  letter-spacing: -0.5px;
+}
+.nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+.nav-links a {
+  color: #889; text-decoration: none; font-size: 14px;
+  transition: color 0.25s; cursor: pointer;
+}
+.nav-links a:hover { color: #00ff88; }
+.nav-status {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 20px;
+  border: 1px solid rgba(0,255,136,0.15);
+  font-size: 13px; color: #00cc6a;
+}
+.nav-status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #00ff88; box-shadow: 0 0 8px rgba(0,255,136,0.6);
+  animation: pulse 2s infinite;
+}
+.nav-toggle { display: none; }
+
+/* ===== 区域通用 ===== */
+.section {
+  position: relative; z-index: 10;
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+}
+.section-label {
+  font-size: 12px; color: #00ff88; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-size: 36px; font-weight: 700; color: #e0e3e1;
+  margin-bottom: 12px; text-align: center;
+}
+.section-subtitle {
+  font-size: 15px; color: #778; text-align: center;
+  max-width: 480px; margin-bottom: 48px; line-height: 1.8;
+}
+
+/* ===== Hero 区域 ===== */
+#hero { min-height: 100vh; padding-top: 80px; }
+#hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; z-index: 5;
+  background: linear-gradient(to bottom, transparent, rgba(4,8,5,0.7));
+  pointer-events: none;
+}
+.canvas-wrap {
+  width: 900px; max-width: 96vw; height: 310px; margin-bottom: 8px;
+}
+.hero-subtitle {
+  margin-top: 16px; text-align: center;
+  font-size: 18px; line-height: 2.1; color: #f0f3f1;
+  letter-spacing: 0.5px; max-width: 520px;
+}
+.hero-subtitle strong { color: #fff; font-weight: 600; }
+.highlight { color: #00ff88 !important; }
+.btn-group { display: flex; gap: 18px; margin-top: 38px; }
+.btn {
+  padding: 14px 34px; border-radius: 28px; font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all 0.3s; text-decoration: none; border: none;
+  display: inline-block;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  color: #051510;
+  box-shadow: 0 4px 26px rgba(0,255,136,0.22);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 34px rgba(0,255,136,0.38); }
+.btn-outline {
+  background: rgba(0,255,136,0.06); color: #00cc6a; border: 1px solid rgba(0,255,136,0.2);
+}
+.btn-outline:hover { background: rgba(0,255,136,0.12); border-color: rgba(0,255,136,0.4); color: #00ff88; }
+.scroll-hint {
+  position: absolute; bottom: 38px; left: 50%; transform: translateX(-50%);
+  text-align: center; color: #445; font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase; animation: fadeUp 1s 1s both;
+}
+.scroll-hint .arrow {
+  display: block; margin-top: 10px; font-size: 20px; animation: bounce 2s infinite;
+}
+
+/* ===== 黑色背景容器 ===== */
+.section-dark-bg {
+  background: rgba(2,8,5,0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0,255,136,0.06);
+  border-radius: 24px;
+  padding: 60px 48px;
+  width: 100%; max-width: 960px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* ===== 关于区域 ===== */
+.about-two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%; max-width: 800px;
+}
+.about-big-card {
+  background: rgba(28,32,30,0.88);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 44px 40px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.about-big-card:hover {
+  border-color: rgba(0,255,136,0.2);
+  box-shadow: 0 8px 48px rgba(0,255,136,0.05);
+  transform: translateY(-3px);
+}
+.about-card-title {
+  font-size: 24px; font-weight: 700; color: #e8ece9;
+  margin-bottom: 20px;
+}
+.about-card-body {
+  font-size: 16px; line-height: 2; color: #bcc4c1;
+}
+.about-card-body strong { color: #dde2df; font-weight: 600; }
+.about-content { display: none; }
+.about-content strong { color: #c8cecb; font-weight: 500; }
+.about-tags {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin-top: 28px;
+}
+.tag {
+  padding: 6px 16px; border-radius: 20px;
+  border: 1px solid rgba(0,255,136,0.2);
+  font-size: 13px; color: #00cc6a;
+}
+
+/* ===== 卡片网格 ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; width: 100%; max-width: 960px;
+}
+.card {
+  background: rgba(28,32,30,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 32px;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  background: rgba(35,40,38,0.92);
+  border-color: rgba(0,255,136,0.25);
+  box-shadow: 0 8px 40px rgba(0,255,136,0.08);
+  transform: translateY(-4px);
+}
+.card-icon {
+  font-size: 32px; margin-bottom: 16px;
+}
+.card-title {
+  font-size: 18px; font-weight: 600; color: #dde;
+  margin-bottom: 8px;
+}
+.card-desc {
+  font-size: 14px; color: #889; line-height: 1.8;
+}
+.card-badge {
+  display: inline-block; margin-top: 16px;
+  padding: 4px 12px; border-radius: 12px;
+  background: rgba(0,255,136,0.08); color: #00cc6a;
+  font-size: 12px;
+}
+.qrcode-card {
+  text-align: center;
+  padding: 36px 32px;
+}
+.qrcode-img {
+  width: 180px; height: 180px;
+  border-radius: 12px;
+  border: 2px solid rgba(0,255,136,0.12);
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+}
+/* ===== 公众号卡片 ===== */
+.wechat-card {
+  display: flex; gap: 60px; align-items: center;
+  background: rgba(28,32,30,0.88);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 48px 52px;
+  max-width: 780px; width: 100%;
+}
+.wechat-left { flex: 1; }
+.wechat-name {
+  font-size: 28px; font-weight: 700; color: #e8ece9;
+  margin-bottom: 10px;
+}
+.wechat-tags-inline {
+  font-size: 15px; color: #99a; margin-bottom: 16px;
+}
+.wechat-tags-inline .dot { margin: 0 6px; color: #556; }
+.wechat-desc {
+  font-size: 15px; line-height: 1.8; color: #99a;
+  margin-bottom: 24px; max-width: 400px;
+}
+.wechat-qr-row {
+  display: flex; align-items: center; gap: 18px;
+}
+.qrcode-img-small {
+  width: 72px; height: 72px;
+  border-radius: 10px;
+  border: 2px solid rgba(0,255,136,0.15);
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+}
+.wechat-qr-text {
+  font-size: 14px; color: #99a; line-height: 1.7;
+}
+.qrcode-img-corner {
+  width: 120px; height: 120px;
+  border-radius: 14px;
+  border: 2px solid rgba(0,255,136,0.1);
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .wechat-card { flex-direction: column; padding: 36px 28px; gap: 28px; }
+  .qrcode-img-corner { width: 100px; height: 100px; }
+}
+
+/* ===== Coming Soon ===== */
+.coming-soon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%; max-width: 860px;
+}
+.cs-card {
+  background: rgba(28,32,30,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 36px 28px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.cs-card:hover {
+  border-color: rgba(0,255,136,0.25);
+  box-shadow: 0 8px 40px rgba(0,255,136,0.08);
+  transform: translateY(-4px);
+}
+.cs-label {
+  display: inline-block; margin-bottom: 16px;
+  padding: 4px 14px; border-radius: 12px;
+  background: rgba(0,255,136,0.06); color: #00aa66;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+}
+.cs-title { font-size: 18px; font-weight: 600; color: #dde2df; margin-bottom: 8px; }
+.cs-desc { font-size: 14px; color: #889; line-height: 1.7; }
+
+/* ===== 页脚 ===== */
+footer {
+  position: relative; z-index: 10;
+  text-align: center; padding: 48px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer p { font-size: 13px; color: #556; margin-bottom: 8px; }
+footer a { color: #778; text-decoration: none; font-size: 13px; transition: color 0.2s; }
+footer a:hover { color: #00ff88; }
+
+/* ===== 动画 ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.25; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(18px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); }
+}
+
+/* ===== 响应式 ===== */
+  @media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { gap: 20px; }
+  .section-title { font-size: 26px; }
+  .section { padding: 80px 20px; }
+  .canvas-wrap { height: 200px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .btn-group { flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  .nav-links { gap: 12px; font-size: 12px; }
+  .nav-links a { font-size: 12px; }
+  .section-title { font-size: 22px; }
+  .hero-subtitle { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav id="navbar">
+  <div class="logo">Daxiatiao</div>
+  <ul class="nav-links">
+    <li><a href="#hero">首页</a></li>
+    <li><a href="#about">关于</a></li>
+    <li><a href="#projects">项目</a></li>
+    <li><a href="#blog">博客</a></li>
+    <li><a href="#future">未来</a></li>
+    <li class="nav-status"><span class="nav-status-dot"></span> AI 数智员工 · 运行中</li>
+  </ul>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="section" id="hero">
+  <div class="hero-spotlight"></div>
+  <div class="canvas-wrap">
+    <canvas id="mc" style="width:100%;height:100%"></canvas>
+  </div>
+  <div class="hero-subtitle">
+    通信工程硕士 · 光网络运维工程师<br>
+    专注于 PTN/SPN 传输网维护、AI 数智员工开发<br>
+    用 <strong class="highlight">AI</strong> 重塑网络运维的未来
+  </div>
+  <div class="btn-group">
+    <a href="#projects" class="btn btn-primary">查看我的项目 →</a>
+    <a href="#blog" class="btn btn-outline">关注我的公众号</a>
+  </div>
+  <div class="scroll-hint">
+    SCROLL TO EXPLORE
+    <span class="arrow">∨</span>
+  </div>
+</section>
+
+<!-- ===== 关于 ===== -->
+<section class="section" id="about">
+  <div class="section-label">ABOUT</div>
+  <div class="section-title">关于我</div>
+  <div class="section-subtitle">一名在通信网络与 AI 交叉领域持续探索的技术人</div>
+  <div class="about-two-col">
+    <div class="about-big-card">
+      <div class="about-card-title">💻 技术之路</div>
+      <div class="about-card-body">
+        <p>通信工程硕士（085402），现就职于<strong>通信网络科技公司</strong>，负责 PTN/SPN 传输网光功率巡检与日常维护。</p>
+        <p style="margin-top:12px;">业余时间深耕 <strong>AI 数智员工开发</strong>，基于 Python + DeepSeek API 构建「光功率异常智能诊断员」项目，致力于将 AI 能力落地到一线网络运维场景。</p>
+      </div>
+      <div class="about-tags">
+        <span class="tag">光网络运维</span>
+        <span class="tag">Python 开发</span>
+        <span class="tag">AI 数智员工</span>
+      </div>
+    </div>
+    <div class="about-big-card">
+      <div class="about-card-title">🎯 前进方向</div>
+      <div class="about-card-body">
+        <p>正在准备<strong>通信行业公考</strong>，目标通信管理局等对口单位；同时探索博士深造路径。</p>
+        <p style="margin-top:12px;">关注<strong>Web 全栈开发</strong>与<strong>微信小程序</strong>，持续学习，不断精进。</p>
+      </div>
+      <div class="about-tags">
+        <span class="tag">公考备考</span>
+        <span class="tag">博士深造</span>
+        <span class="tag">全栈探索</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 项目 ===== -->
+<section class="section" id="projects">
+  <div class="section-dark-bg">
+  <div class="section-label">PROJECTS</div>
+  <div class="section-title">项目作品</div>
+  <div class="section-subtitle">将 AI 能力落地到实际工作场景</div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">光功率异常智能诊断员</div>
+      <div class="card-desc">
+        基于 Python + DeepSeek API 构建的数智员工，自动采集 PTN/SPN 光功率数据，按旗县分拣越限清单并生成巡检简报，实现分钟级异常定位与主动运维。
+      </div>
+      <div class="card-badge">磐匠数字员工平台</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">光功率自动巡检系统</div>
+      <div class="card-desc">
+        自动化处理多子表 Excel 巡检数据，筛选 5 旗 2 县光功率越限，分地区生成报表，支持邮件自动推送至各旗县维护负责人。
+      </div>
+      <div class="card-badge">Python + pandas</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">个人技术博客</div>
+      <div class="card-desc">
+        以读博申请为导向的学术展示型个人站点，记录通信网络、AI 开发、公考备考的学习笔记与思考，持续更新中。
+      </div>
+      <div class="card-badge">建设中</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== 博客 ===== -->
+<section class="section" id="blog">
+  <div class="section-dark-bg">
+  <div class="section-label">WECHAT</div>
+  <div class="section-title">加入我的公众号</div>
+  <div class="wechat-card">
+    <div class="wechat-left">
+      <div class="wechat-name">Daxiatiao</div>
+      <div class="wechat-tags-inline">
+        <span>通信</span><span class="dot">·</span><span>AI</span><span class="dot">·</span><span>技术</span>
+      </div>
+      <p class="wechat-desc">通信网络运维 &amp; AI 数智员工开发，持续学习与分享。</p>
+      <div class="wechat-qr-row">
+        <img src="qrcode.jpg" alt="公众号二维码" class="qrcode-img-small">
+        <div class="wechat-qr-text">
+          <strong style="color:#e8ece9;font-size:17px;">扫码关注</strong><br>
+          或微信搜索「Daxiatiao」
+        </div>
+      </div>
+    </div>
+    <div class="wechat-right">
+      <img src="qrcode.jpg" alt="公众号二维码" class="qrcode-img-corner">
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== 未来 ===== -->
+<section class="section" id="future">
+  <div class="section-dark-bg">
+  <div class="section-label">FUTURE</div>
+  <div class="section-title">正在路上</div>
+  <div class="section-subtitle">更多想法正在孵化，一步一步变成现实</div>
+  <div class="coming-soon-grid">
+    <div class="cs-card">
+      <div class="cs-label">COMING SOON</div>
+      <div class="cs-title">AI 数智员工平台化</div>
+      <div class="cs-desc">将光功率诊断能力扩展为通用数智员工框架，支持更多运维场景。</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">COMING SOON</div>
+      <div class="cs-title">微信小程序上线</div>
+      <div class="cs-desc">光功率异常告警移动端推送，随时随地掌握网络状态。</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">COMING SOON</div>
+      <div class="cs-title">学术论文发表</div>
+      <div class="cs-desc">基于 AI + 光网络运维的学术研究成果，为博士申请做准备。</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <p>&copy; 2026 Daxiatiao. All rights reserved.</p>
+  <p>通信工程硕士 · 光网络运维 · AI 数智员工</p>
+  <a href="#hero" style="margin-top:8px;display:inline-block;">↑ 返回顶部</a>
+</footer>
+
+<script>
+// ===== 矩阵粒子 3D 文字引擎 =====
+(function() {
+  const canvas = document.getElementById('mc');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const TEXT = 'Daxiatiao';
+  const CHARS = '01';
+  const DENSITY = 4.5;
+  const FONT_SIZE = 170;
+  let W, H, dpr, particles = [], t = 0;
+  let mouseX = -999, mouseY = -999, rawMouseX = -999, rawMouseY = -999;
+
+  function buildParticles() {
+    const off = document.createElement('canvas');
+    off.width = Math.floor(W) * dpr;
+    off.height = Math.floor(H) * dpr;
+    const oc = off.getContext('2d');
+    oc.scale(dpr, dpr);
+    oc.font = `bold ${FONT_SIZE}px "Courier New", "Noto Sans SC", monospace`;
+    oc.textAlign = 'center';
+    oc.textBaseline = 'middle';
+    oc.fillStyle = '#fff';
+    oc.fillText(TEXT, W / 2, H / 2 + 18);
+    const img = oc.getImageData(0, 0, Math.floor(W), Math.floor(H));
+    const d = img.data;
+    particles = [];
+    for (let y = 0; y < H; y += DENSITY) {
+      for (let x = 0; x < W; x += DENSITY) {
+        const i = (Math.floor(y) * Math.floor(W) + Math.floor(x)) * 4;
+        if (d[i + 3] > 100) {
+          particles.push({
+            ox: x, oy: y, x: x, y: y,
+            ch: CHARS[Math.floor(Math.random() * CHARS.length)],
+            ph: Math.random() * Math.PI * 2,
+            sp: 0.015 + Math.random() * 0.04,
+            dr: (Math.random() - 0.5) * 0.35,
+          });
+        }
+      }
+    }
+    setInterval(() => {
+      for (const p of particles) {
+        if (Math.random() > 0.92) p.ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+      }
+    }, 120);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    t += 0.008;
+
+    // 鼠标跟随（离开立即复位）
+    if (rawMouseX > -999) {
+      mouseX += (rawMouseX - mouseX) * 0.08;
+      mouseY += (rawMouseY - mouseY) * 0.08;
+    } else {
+      mouseX = -999;
+      mouseY = -999;
+    }
+
+    for (const p of particles) {
+      const br = Math.sin(t * p.sp * 60 + p.ph) * 1.4;
+      const dx = br + Math.sin(t * 0.7 + Math.random() * 0.001) * p.dr * 3;
+      const dy = Math.cos(t * 0.55 + Math.random() * 0.002) * 1.0;
+      let px = p.ox + dx, py = p.oy + dy;
+      let scale = 1.0;
+
+      if (mouseX > -999) {
+        const rdx = px - mouseX, rdy = py - mouseY;
+        const dist = Math.sqrt(rdx*rdx + rdy*rdy);
+        if (dist < 160) {
+          // 线性推力：越近推力越大
+          const f = (160 - dist) / 160 * 22;
+          px += (rdx / dist) * f;
+          py += (rdy / dist) * f;
+          // 粒子变大：越近越大
+          scale = 1.0 + (160 - dist) / 160 * 2.5;
+        }
+      }
+
+      const depth = 0.45 + (py / H) * 0.55;
+      const flk = 0.7 + Math.sin(t * 4.5 + Math.random() * 0.4) * 0.3;
+      const a = depth * flk;
+      const g = Math.floor(190 + depth * 65);
+      const baseSize = 12 + Math.random() * 2;
+      const size = Math.floor(baseSize * scale);
+      ctx.font = `${size}px "Courier New", monospace`;
+      ctx.fillStyle = `rgba(0,${g},${Math.floor(g*0.45)},${a})`;
+      ctx.fillText(p.ch, px, py + Math.floor(4 * scale));
+    }
+    requestAnimationFrame(draw);
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = canvas.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.scale(dpr, dpr);
+    buildParticles();
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', resize);
+
+  canvas.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    rawMouseX = e.clientX - r.left;
+    rawMouseY = e.clientY - r.top;
+  });
+  canvas.addEventListener('mouseleave', () => { rawMouseX = -999; rawMouseY = -999; });
+})();
+
+// ===== 导航栏滚动效果 =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ===== 平滑滚动 =====
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
